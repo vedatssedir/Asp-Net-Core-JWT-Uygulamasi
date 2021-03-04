@@ -1,0 +1,27 @@
+﻿@model List<ProductList>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<a href="@Url.Action("Create", "Home")" class="btn btn-primary">Ürün Ekle</a>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Urun Adi</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>
+                <a asp-action="Update" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-primary">Güncelle</a>
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

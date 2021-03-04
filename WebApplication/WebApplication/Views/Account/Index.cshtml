@@ -1,0 +1,23 @@
+﻿@model AppUserLogin
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+<form action="@Url.Action("Index","Account")" method="post" class="w-75 mx-auto p-3 mt-4">
+    <div class="form-group row">
+        <label class="col-form-label col-md-3 font-weight-bold">Kullanıcı Adı:</label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" asp-for="UserName"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-md-3 font-weight-bold">Şifre:</label>
+        <div class="col-md-9">
+            <input type="text" class="form-control" asp-for="Password"/>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Giriş Yap</button>
+    <a class="btn btn-primary" href="@Url.Action("SignUp", "Account")">Kayıt Ol</a>
+</form>
